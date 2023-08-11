@@ -24,6 +24,8 @@ int main(int argc, char const *argv[]){
     return 0;
 }
 
+
+/*método de classificação*/
 void selection_sort(int colecao[], int tamanho){
 	int i, j, pos_menor, elemento_auxiliar;
 	
