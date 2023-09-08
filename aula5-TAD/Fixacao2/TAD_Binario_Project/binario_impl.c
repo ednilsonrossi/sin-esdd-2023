@@ -1,3 +1,8 @@
+/**
+ * Autor: Ednilson Geraldo Rossi
+ * linktr.ee/ednilsonrossi
+*/
+
 #include "binario.h"
 
 struct meu_binario{

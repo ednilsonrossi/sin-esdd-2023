@@ -1,3 +1,8 @@
+/**
+ * Autor: Ednilson Geraldo Rossi
+ * linktr.ee/ednilsonrossi
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
