@@ -2,7 +2,7 @@
 
 int main(int argc, char const *argv[])
 {
-    Lista lst;
+    Lista lst; 
     Info informacao;
 
     lst = lista_criar();
@@ -19,6 +19,8 @@ int main(int argc, char const *argv[])
         informacao = lista_obtemInfo(lst, i);
         printf("Lista[%d]: %d\n", i, informacao);
     }
+
+    printf("Tamanho da lista: %d\n", lista_tamanho(lst));
 
     lista_destroi(lst);
 

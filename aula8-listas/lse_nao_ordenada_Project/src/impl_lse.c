@@ -2,7 +2,7 @@
 
 struct lista{
     Node ptr;
-};
+}; 
 
 Lista lista_criar(){
     Lista lista;
@@ -93,3 +93,17 @@ bool lista_destroi(Lista lista){
     return false;
 }
 
+int lista_tamanho(Lista lista){
+    Node caminhante;
+    int tamanho = 0;
+
+    if(lista != NULL){
+        caminhante = lista->ptr;
+        while(caminhante != NULL){
+            tamanho += 1;
+            caminhante = node_obtemNext(caminhante);
+        }
+    }
+
+    return tamanho;
+}

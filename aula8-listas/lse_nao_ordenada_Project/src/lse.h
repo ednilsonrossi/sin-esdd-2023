@@ -37,3 +37,5 @@ bool lista_estaVazia(Lista lista);
   * se não conseguiu destruir a lista.
   **/
 bool lista_destroi(Lista lista);
+
+int lista_tamanho(Lista lista);
