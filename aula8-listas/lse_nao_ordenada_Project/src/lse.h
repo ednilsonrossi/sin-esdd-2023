@@ -39,3 +39,5 @@ bool lista_estaVazia(Lista lista);
 bool lista_destroi(Lista lista);
 
 int lista_tamanho(Lista lista);
+
+bool lista_existe(Lista lista, Info data);

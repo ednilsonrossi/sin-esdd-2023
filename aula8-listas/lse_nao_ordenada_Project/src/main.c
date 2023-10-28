@@ -22,6 +22,9 @@ int main(int argc, char const *argv[])
 
     printf("Tamanho da lista: %d\n", lista_tamanho(lst));
 
+    printf("Existe 25: %d\n", lista_existe(lst, 25));
+    printf("Existe 18: %d\n", lista_existe(lst, 18));
+
     lista_destroi(lst);
 
     return 0;

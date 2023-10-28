@@ -107,3 +107,20 @@ int lista_tamanho(Lista lista){
 
     return tamanho;
 }
+
+bool lista_existe(Lista lista, Info data){
+    Node caminhante;
+    bool existe = false;
+
+    if(lista != NULL){
+        caminhante = lista->ptr;
+        while(caminhante != NULL && !existe){
+            if(node_obtemInfo(caminhante) == data){
+                existe = true;
+            }
+            caminhante = node_obtemNext(caminhante);
+        }
+    }
+
+    return existe;
+}
