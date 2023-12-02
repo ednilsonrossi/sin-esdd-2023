@@ -14,4 +14,6 @@ bool insere_final(Lista lista, Infotype info);
 
 bool insere_ordenado(Lista lista, Infotype info);
 
+bool apagar(Lista lista, Infotype info);
+
 void imprime_lista(Lista lista);

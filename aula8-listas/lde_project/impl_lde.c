@@ -62,6 +62,49 @@ bool insere_final(Lista lista, Infotype info){
 }
 
 bool insere_ordenado(Lista lista, Infotype info){
+    if(lista != NULL){
+        Node novo = malloc(sizeof(struct node));
+        novo->info = info;
+        if(lista->head == NULL){
+            //lista vazia
+            novo->next = NULL;
+            novo->prev = NULL;
+            lista->head = novo;
+        }else{
+            if(novo->info < lista->head->info){
+                //insere no início
+                novo->next = lista->head;
+                novo->prev = NULL;
+                lista->head->prev = novo;
+                lista->head = novo;
+            }else{
+                //procurar posicao na lista
+                Node walker = lista->head;
+                while(novo->info > walker->info && walker->next != NULL){
+                    walker = walker->next;
+                }
+
+                if(novo->info > walker->info){
+                    //insere depois do walker
+                    novo->next = walker->next;
+                    walker->next = novo;
+                    novo->prev = walker;
+                }else{
+                    //insere antes do walker
+                    novo->prev = walker->prev;
+                    novo->next = walker;
+                    walker->prev->next = novo;
+                    walker->prev = novo;
+                }
+            }
+        }
+
+        return true;
+    }
+    return false;
+}
+
+bool apagar(Lista lista, Infotype info){
     
 }
 

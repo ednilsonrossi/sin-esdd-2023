@@ -9,7 +9,9 @@ int main(int argc, char const *argv[])
     insere_ordenado(l, 12);
     insere_ordenado(l, 5);
     insere_ordenado(l, 13);
+    imprime_lista(l);
 
+    apagar(l, 12);
     imprime_lista(l);
 
     return 0;
