@@ -105,11 +105,48 @@ bool insere_ordenado(Lista lista, Infotype info){
 }
 
 bool apagar(Lista lista, Infotype info){
-    
+    if(lista != NULL){
+        if(lista->head != NULL){
+            Node walker = lista->head;
+            while (walker->info != info && walker->next != NULL){
+                walker = walker->next;
+            }
+
+            //verificar se encontrou a info ou se a info não existe
+            if(walker->info == info){
+                //info encontrada, apagar o nó
+                if(walker == lista->head){
+                    //primeiro nó que deve ser excluído
+
+                    //organiza a cabeça da lista e o novo nó cabeça que tem o prev nulo
+                    lista->head = walker->next;
+                    lista->head->prev = NULL;
+                }else{
+                    if(walker->next == NULL){
+                        //último nó deve ser excluído
+
+                        //ajusta o penultimo no para ser o ultimo
+                        walker->prev->next = NULL;
+                    }else{
+                        //apagar nó do meio da lista
+
+                        walker->prev->next = walker->next;
+                        walker->next->prev = walker->prev;
+                    }
+                }
+                //apagar o walker
+                free(walker);
+                return true;
+            }
+            //caso não encontre a algoritmo segue para retorno false
+        }
+    }
+    return false;
 }
 
 void imprime_lista(Lista lista){
     if(lista != NULL){
+        printf("HEAD: %p\n", lista->head);
         Node walker = lista->head;
         while (walker != NULL){
             printf("Prev: %p ", walker->prev);

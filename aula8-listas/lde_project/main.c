@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
     insere_ordenado(l, 13);
     imprime_lista(l);
 
-    apagar(l, 12);
+    apagar(l, 5);
     imprime_lista(l);
 
     return 0;
